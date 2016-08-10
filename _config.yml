@@ -1,10 +1,10 @@
 # Hexo Configuration
-## Docs: http://hexo.io/docs/configuration.html
-## Source: https://github.com/hexojs/hexo
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Swift
-subtitle: 技术
+title: XcodeYang
+subtitle: 我喜欢swift😍，有个Taylor前缀更好
 description: 苦逼的码农
 author: XcodeYang
 language: cn
@@ -28,7 +28,7 @@ i18n_dir: :lang
 skip_render:
 
 # Writing
-new_post_name: :year-:month-:day-:title.md # File name of new posts
+new_post_name: :title.md # File name of new posts
 default_layout: post
 titlecase: false # Transform title into titlecase
 external_link: true # Open external links in new tab
@@ -40,8 +40,7 @@ future: true
 highlight:
   enable: true
   line_number: true
-  auto_detect: true
-  mathjax: true
+  auto_detect: false
   tab_replace:
 
 # Category & Tag
@@ -62,12 +61,12 @@ per_page: 10
 pagination_dir: page
 
 # Extensions
-## Plugins: http://hexo.io/plugins/
-## Themes: http://hexo.io/themes/
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
 theme: hexo-theme-yilia-master
 
 # Deployment
-## Docs: http://hexo.io/docs/deployment.html
+## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
   repo: git@github.com:ZhipingYang/zhipingyang.github.io.git

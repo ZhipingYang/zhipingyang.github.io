@@ -6,9 +6,9 @@ menu:
 
 # SubNav
 subnav:
-  github: https://github.com/51offer
+  github: https://github.com/zhipingyang
   weibo: http://weibo.com/p/1006062608078012/home
-  mail: ming.z@51offer.com
+  mail: xcodeyang@gmail.com
   #rss: "#"
   #zhihu: "#"
   #douban: "#"
@@ -35,7 +35,7 @@ google_analytics: ''
 favicon: /favicon.png
 
 #你的头像url
-avatar: ''
+avatar: 'https://avatars3.githubusercontent.com/u/9360037'
 #是否开启分享
 share: true
 #是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
@@ -56,4 +56,4 @@ friends:
 #不开启——
 #aboutme: false
 #开启——
-aboutme: 我们是一群爱折腾的技术宅，立志在留学行业做些好玩的事。如果你相信技术拥有强大的力量，有很多有趣的念头不知在何处能实践，不妨加入我们一起切磋。。。
+aboutme: 曾经很多人说我逗逼，我不这么认为，我觉得自己是一个十分正经的代码搬运工，立志于30岁前结婚😂
