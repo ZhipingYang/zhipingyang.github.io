@@ -16,14 +16,15 @@ before_install:
 - ssh-add ~/.ssh/id_rsa
 - cp .travis/ssh_config ~/.ssh/config
 - git config --global user.name "travis_bot"
-- git config --global user.email "mithvv@gmail.com"
+- git config --global user.email "xcodeyang@gmail.com"
 
 
 script:
+- hexo clean
 - hexo generate
 - hexo deploy
 
 
 branches:
   only:
-  - blog
+  - resource
