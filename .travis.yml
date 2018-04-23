@@ -12,9 +12,8 @@ install:
   - npm install i -g npm-check-updates
 
 
-before_script:
- - npm install hexo-cli -g
- - npm install hexo-deployer-git --save 
+# before_script:
+#  - npm install hexo-cli -g
 
 script:
   - hexo clean
