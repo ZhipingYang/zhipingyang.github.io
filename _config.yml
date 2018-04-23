@@ -69,5 +69,5 @@ theme: hexo-theme-yilia-master
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
-  repo: https://github.com/ZhipingYang/blog.git
+  repo: https://github.com/ZhipingYang/zhipingyang.github.io.git
   branch: master
