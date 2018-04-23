@@ -12,10 +12,13 @@ install:
   - npm install i -g npm-check-updates
 
 
-# before_script:
-#  - npm install -g gulp
+before_script:
+ - npm install hexo-cli -g
+ - npm install hexo-server --save
+ - npm install hexo-deployer-git --save 
 
 script:
+  - hexo clean
   - hexo generate
 
 after_script:
