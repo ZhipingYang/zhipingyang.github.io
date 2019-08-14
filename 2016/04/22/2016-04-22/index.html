@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Swift 的 Playground 学习 | XcodeYang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Swift 的 Playground 学习
+我们一开始知道 Playground，也知道然后查看一些变量及变量的历史记录。偶尔还知道可以做视图甚至动画展示但是，现在，你特么看到的是 MarkDown 语法，有没有。
+
+参考文献
+XCPlayground介绍&amp;amp;实践
+XCPlayground苹果官网文档
+
+使用优势
+快速学习swift
+快速测试代码效果
+验证API
+富文本注释
+
+如下所有案例使">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swift 的 Playground 学习">
+<meta property="og:url" content="http://yoursite.com/2016/04/22/2016-04-22/index.html">
+<meta property="og:site_name" content="XcodeYang">
+<meta property="og:description" content="Swift 的 Playground 学习
+我们一开始知道 Playground，也知道然后查看一些变量及变量的历史记录。偶尔还知道可以做视图甚至动画展示但是，现在，你特么看到的是 MarkDown 语法，有没有。
+
+参考文献
+XCPlayground介绍&amp;amp;实践
+XCPlayground苹果官网文档
+
+使用优势
+快速学习swift
+快速测试代码效果
+验证API
+富文本注释
+
+如下所有案例使">
+<meta property="og:updated_time" content="2019-08-14T08:40:52.004Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Swift 的 Playground 学习">
+<meta name="twitter:description" content="Swift 的 Playground 学习
+我们一开始知道 Playground，也知道然后查看一些变量及变量的历史记录。偶尔还知道可以做视图甚至动画展示但是，现在，你特么看到的是 MarkDown 语法，有没有。
+
+参考文献
+XCPlayground介绍&amp;amp;实践
+XCPlayground苹果官网文档
+
+使用优势
+快速学习swift
+快速测试代码效果
+验证API
+富文本注释
+
+如下所有案例使">
+  
+    <link rel="alternative" href="/atom.xml" title="XcodeYang" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://avatars3.githubusercontent.com/u/9360037" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">XcodeYang</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">我喜欢swift😍，有个Taylor前缀更好</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/zhipingyang" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/xcodeyang@gmail.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Accelerate/" style="font-size: 10px;">Accelerate</a> <a href="/tags/Fight/" style="font-size: 10px;">Fight</a> <a href="/tags/Injury/" style="font-size: 10px;">Injury</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/Shocking/" style="font-size: 10px;">Shocking</a> <a href="/tags/TouchID/" style="font-size: 10px;">TouchID</a> <a href="/tags/Universal-Links/" style="font-size: 10px;">Universal Links</a> <a href="/tags/auto/" style="font-size: 10px;">auto</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/cocoapods/" style="font-size: 10px;">cocoapods</a> <a href="/tags/defer/" style="font-size: 10px;">defer</a> <a href="/tags/deploy/" style="font-size: 10px;">deploy</a> <a href="/tags/document/" style="font-size: 10px;">document</a> <a href="/tags/guard/" style="font-size: 10px;">guard</a> <a href="/tags/hitTest/" style="font-size: 10px;">hitTest</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/lazy/" style="font-size: 10px;">lazy</a> <a href="/tags/nextResponder/" style="font-size: 10px;">nextResponder</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/responder-chain/" style="font-size: 10px;">responder chain</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/物理引擎/" style="font-size: 10px;">物理引擎</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/通用链接/" style="font-size: 10px;">通用链接</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.tomatopeter.com/">tomatopeter&#39;s blog&#39;</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ioi.im/">ming.z&#39;s blog</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">If you want to go fast, go alone. If you want to go far, go with others.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">XcodeYang</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://avatars3.githubusercontent.com/u/9360037" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">XcodeYang</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">我喜欢swift😍，有个Taylor前缀更好</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/zhipingyang" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/xcodeyang@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-2016-04-22" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/22/2016-04-22/" class="article-date">
+  	<time datetime="2016-04-22T10:30:00.000Z" itemprop="datePublished">2016-04-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Swift 的 Playground 学习
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Playground/">Playground</a></li></ul>
+	</div>
+
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/移动组周技术分享/">移动组周技术分享</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Swift-的-Playground-学习"><a href="#Swift-的-Playground-学习" class="headerlink" title="Swift 的 Playground 学习"></a>Swift 的 Playground 学习</h2><blockquote>
+<p>我们一开始知道 <strong><em>Playground</em></strong>，也知道然后查看一些变量及变量的历史记录。偶尔还知道可以做视图甚至动画展示但是，现在，你特么看到的是 <strong><em>MarkDown</em></strong> 语法，有没有。</p>
+</blockquote>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><ul>
+<li><a href="http://nshipster.cn/xcplayground/" target="_blank" rel="external">XCPlayground介绍&amp;实践</a></li>
+<li><a href="https://developer.apple.com/library/mac/documentation/Miscellaneous/Reference/XCPlaygroundModuleRef/XCPlayground.html" target="_blank" rel="external">XCPlayground苹果官网文档</a></li>
+</ul>
+<h3 id="使用优势"><a href="#使用优势" class="headerlink" title="使用优势"></a>使用优势</h3><ul>
+<li>快速学习swift</li>
+<li>快速测试代码效果</li>
+<li>验证API</li>
+<li>富文本注释</li>
+</ul>
+<p><code>如下所有案例使用Xcode7下加载playground文件，可预览效果</code><br><a href="https://github.com/51offer/51offer.github.com/tree/blog/share_files/xcodeyang52.playground" target="_blank" rel="external">文件下载链接</a></p>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><blockquote>
+<p>至上而下执行，显示变量的当前值及历史记录的变化。</p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> name = <span class="string">"杨志"</span></div><div class="line">name += <span class="string">"平"</span></div><div class="line"><span class="comment">// playground下预览</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> graph = <span class="number">0.0</span></div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="number">0</span>...<span class="number">100</span> &#123;</div><div class="line">    graph = sin(<span class="type">Double</span>(i)/<span class="number">10.0</span>)</div><div class="line">    <span class="comment">// playground下预览</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="UI视图"><a href="#UI视图" class="headerlink" title="UI视图"></a>UI视图</h3><blockquote>
+<p>简单显示UI的基础元素</p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> redView = <span class="type">UIView</span>(frame:<span class="type">CGRectMake</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">100</span>,<span class="number">100</span>))</div><div class="line">redView.backgroundColor = <span class="type">UIColor</span>.redColor()</div><div class="line">redView.layer.cornerRadius = <span class="number">20</span></div><div class="line">redView.layer.borderWidth = <span class="number">3</span></div><div class="line">redView.layer.borderColor = <span class="type">UIColor</span>.whiteColor().<span class="type">CGColor</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> circle = <span class="type">UIView</span>(frame:<span class="type">CGRectMake</span>(<span class="number">25</span>,<span class="number">25</span>,<span class="number">50</span>,<span class="number">50</span>))</div><div class="line">circle.backgroundColor = <span class="type">UIColor</span>.yellowColor()</div><div class="line">circle.layer.cornerRadius = <span class="number">80</span></div><div class="line">redView.addSubview(circle)</div><div class="line"><span class="comment">// playground下预览</span></div></pre></td></tr></table></figure>
+<h3 id="重头戏"><a href="#重头戏" class="headerlink" title="重头戏"></a>重头戏</h3><h4 id="动画展示-amp-网络请求"><a href="#动画展示-amp-网络请求" class="headerlink" title="动画展示 &amp; 网络请求"></a>动画展示 &amp; 网络请求</h4><blockquote>
+<p>这里需要对 XCPlayground 有一点了解，好像还对SpriteKit做了支持<a href="http://letvar.com/blog/2014/06/swift-and-playgrounds-learn-to-program-in-a-fun-way-2/" target="_blank" rel="external">文章连接</a></p>
+</blockquote>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 这个库需要import</span></div><div class="line"><span class="keyword">import</span> XCPlayground</div><div class="line"></div><div class="line"><span class="keyword">let</span> containerView = <span class="type">UIView</span>(frame: <span class="type">CGRect</span>(x: <span class="number">0</span>, y: <span class="number">0</span>, width: <span class="number">320</span>, height: <span class="number">480</span>))</div><div class="line">containerView.backgroundColor = <span class="type">UIColor</span>.yellowColor()</div><div class="line"><span class="type">XCPlaygroundPage</span>.currentPage.liveView = containerView</div><div class="line"></div><div class="line"><span class="keyword">let</span> view = <span class="type">UIView</span>(frame: <span class="type">CGRect</span>(x: <span class="number">0</span>, y: <span class="number">0</span>, width: <span class="number">100</span>, height: <span class="number">100</span>))</div><div class="line">view.center = <span class="type">CGPoint</span>(x: containerView.center.x, y: containerView.center.y-<span class="number">100</span>)</div><div class="line">view.backgroundColor = <span class="type">UIColor</span>.redColor()</div><div class="line">containerView.addSubview(view)</div><div class="line"></div><div class="line"><span class="comment">// playground下预览</span></div><div class="line"><span class="type">UIView</span>.animateWithDuration(<span class="number">3</span>, delay: <span class="number">0</span>, usingSpringWithDamping: <span class="number">0.1</span>, initialSpringVelocity: <span class="number">6</span>, options: <span class="type">UIViewAnimationOptions</span>.<span class="type">CurveEaseInOut</span>, animations: &#123;</div><div class="line">        view.center.y += <span class="number">100</span></div><div class="line">    &#125;, completion:&#123; (animation: <span class="type">Bool</span>) <span class="keyword">in</span></div><div class="line">        view.center.y -= <span class="number">100</span></div><div class="line">    &#125;</div><div class="line">)</div><div class="line"></div><div class="line"><span class="comment">// 异步操作：网络在家图片</span></div><div class="line"><span class="comment">// 旧接口：XCPSetExecutionShouldContinueIndefinitely(true)</span></div><div class="line"><span class="type">XCPlaygroundPage</span>.currentPage.needsIndefiniteExecution = <span class="literal">true</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> url = <span class="type">NSURL</span>(string: <span class="string">"https://avatars1.githubusercontent.com/u/5317671?v=3&amp;s=460"</span>)!</div><div class="line"><span class="keyword">let</span> task = <span class="type">NSURLSession</span>.sharedSession().dataTaskWithURL(url) &#123;</div><div class="line">    data, <span class="number">_</span>, <span class="number">_</span> <span class="keyword">in</span></div><div class="line">    <span class="keyword">let</span> image = <span class="type">UIImage</span>(data: data!)</div><div class="line">    <span class="comment">// playground下预览</span></div><div class="line">&#125;</div><div class="line">task.resume()</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// 快速检查API接口</span></div><div class="line"><span class="keyword">let</span> url2 = <span class="type">NSURL</span>(string: <span class="string">"http://www.test.51offer.com/mobile/abroad/query_school_by_name?name=%E4%B8%80"</span>)!</div><div class="line"><span class="keyword">let</span> task2 = <span class="type">NSURLSession</span>.sharedSession().dataTaskWithURL(url2) &#123;</div><div class="line">    data, <span class="number">_</span>, <span class="number">_</span> <span class="keyword">in</span></div><div class="line">    <span class="keyword">let</span> str = <span class="type">String</span>(<span class="type">NSString</span>(data: data!, encoding: <span class="type">NSUTF8StringEncoding</span>))</div><div class="line">    <span class="comment">// playground下预览</span></div><div class="line">&#125;</div><div class="line">task2.resume()</div></pre></td></tr></table></figure>
+<h3 id="结构介绍"><a href="#结构介绍" class="headerlink" title="结构介绍"></a>结构介绍</h3><ul>
+<li><p>sources</p>
+<blockquote>
+<p>我们直接在 Playground 上面写代码，然后编译器会实时编译我们代码，并将结果显示出来。但是效率很低，source的作用就可以发挥出来</p>
+</blockquote>
+</li>
+<li><p>resources</p>
+<blockquote>
+<p>可以作为sandbox使用</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 直接使用PicButton 这个class.</span></div><div class="line"><span class="comment">// 注意点：PicButton的类及初始化方法必须是public的</span></div><div class="line"></div><div class="line"><span class="keyword">let</span> btn = <span class="type">PicButton</span>(frame: <span class="type">CGRectMake</span>(<span class="number">0</span>,<span class="number">0</span>,<span class="number">200</span>,<span class="number">100</span>))</div><div class="line"><span class="comment">// playground下预览</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">// 如上述：在resources中放入jpg图片，加载本地资源</span></div><div class="line"></div><div class="line"><span class="keyword">if</span> <span class="keyword">let</span> path = <span class="type">NSBundle</span>.mainBundle().pathForResource(<span class="string">"swift-playground"</span>, ofType: <span class="string">"jpg"</span>) &#123;</div><div class="line">    <span class="keyword">let</span> image = <span class="type">UIImage</span>(contentsOfFile:path)</div><div class="line">    <span class="keyword">let</span> imageView = <span class="type">UIImageView</span>(image: image)</div><div class="line">        <span class="comment">// playground下预览</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/05/06/2016-05-06/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          枚举的特殊用法
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/08/2016-04-08/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">快速集成TouchID</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2016-04-22" data-title="Swift 的 Playground 学习" data-url="http://yoursite.com/2016/04/22/2016-04-22/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2019 XcodeYang
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

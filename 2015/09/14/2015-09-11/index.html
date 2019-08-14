@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>浅拷贝与深拷贝 | XcodeYang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="浅拷贝与深拷贝
+ 程序中经常会遇到集合类的传值   坑： 数组操作时对于数组中的对象拷贝
+
+###目的：观察array1、mArrayCopy、mArrayCopy2 三者区别
+123NSArray *array1 = [NSArray arrayWithObjects:[NSMutableString stringWithString:@&amp;quot;a&amp;quot;],@&amp;quot;b&amp;quot;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅拷贝与深拷贝">
+<meta property="og:url" content="http://yoursite.com/2015/09/14/2015-09-11/index.html">
+<meta property="og:site_name" content="XcodeYang">
+<meta property="og:description" content="浅拷贝与深拷贝
+ 程序中经常会遇到集合类的传值   坑： 数组操作时对于数组中的对象拷贝
+
+###目的：观察array1、mArrayCopy、mArrayCopy2 三者区别
+123NSArray *array1 = [NSArray arrayWithObjects:[NSMutableString stringWithString:@&amp;quot;a&amp;quot;],@&amp;quot;b&amp;quot;">
+<meta property="og:updated_time" content="2019-08-14T08:40:52.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浅拷贝与深拷贝">
+<meta name="twitter:description" content="浅拷贝与深拷贝
+ 程序中经常会遇到集合类的传值   坑： 数组操作时对于数组中的对象拷贝
+
+###目的：观察array1、mArrayCopy、mArrayCopy2 三者区别
+123NSArray *array1 = [NSArray arrayWithObjects:[NSMutableString stringWithString:@&amp;quot;a&amp;quot;],@&amp;quot;b&amp;quot;">
+  
+    <link rel="alternative" href="/atom.xml" title="XcodeYang" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="https://avatars3.githubusercontent.com/u/9360037" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">XcodeYang</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">我喜欢swift😍，有个Taylor前缀更好</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						<div class="icon-wrap icon-link hide" data-idx="2">
+							<div class="loopback_l"></div>
+							<div class="loopback_r"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+					
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						<li>友情链接</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/zhipingyang" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+					        
+								<a class="mail" target="_blank" href="/xcodeyang@gmail.com" title="mail">mail</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/Accelerate/" style="font-size: 10px;">Accelerate</a> <a href="/tags/Fight/" style="font-size: 10px;">Fight</a> <a href="/tags/Injury/" style="font-size: 10px;">Injury</a> <a href="/tags/Playground/" style="font-size: 10px;">Playground</a> <a href="/tags/Shocking/" style="font-size: 10px;">Shocking</a> <a href="/tags/TouchID/" style="font-size: 10px;">TouchID</a> <a href="/tags/Universal-Links/" style="font-size: 10px;">Universal Links</a> <a href="/tags/auto/" style="font-size: 10px;">auto</a> <a href="/tags/blog-tools-ci/" style="font-size: 10px;">blog, tools, ci</a> <a href="/tags/cocoapods/" style="font-size: 10px;">cocoapods</a> <a href="/tags/defer/" style="font-size: 10px;">defer</a> <a href="/tags/deploy/" style="font-size: 10px;">deploy</a> <a href="/tags/document/" style="font-size: 10px;">document</a> <a href="/tags/guard/" style="font-size: 10px;">guard</a> <a href="/tags/hitTest/" style="font-size: 10px;">hitTest</a> <a href="/tags/javaScript/" style="font-size: 10px;">javaScript</a> <a href="/tags/lazy/" style="font-size: 10px;">lazy</a> <a href="/tags/nextResponder/" style="font-size: 10px;">nextResponder</a> <a href="/tags/phython/" style="font-size: 10px;">phython</a> <a href="/tags/responder-chain/" style="font-size: 10px;">responder chain</a> <a href="/tags/shell/" style="font-size: 10px;">shell</a> <a href="/tags/博客/" style="font-size: 10px;">博客</a> <a href="/tags/同步异步/" style="font-size: 10px;">同步异步</a> <a href="/tags/开发效率/" style="font-size: 10px;">开发效率</a> <a href="/tags/效率/" style="font-size: 10px;">效率</a> <a href="/tags/游戏/" style="font-size: 10px;">游戏</a> <a href="/tags/物理引擎/" style="font-size: 10px;">物理引擎</a> <a href="/tags/研发杂谈/" style="font-size: 10px;">研发杂谈</a> <a href="/tags/线程/" style="font-size: 10px;">线程</a> <a href="/tags/网站/" style="font-size: 10px;">网站</a> <a href="/tags/通用链接/" style="font-size: 10px;">通用链接</a>
+					</div>
+				</section>
+				
+				
+				
+				<section class="switch-part switch-part3">
+					<div id="js-friends">
+					
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.tomatopeter.com/">tomatopeter&#39;s blog&#39;</a>
+			        
+			          <a target="_blank" class="main-nav-link switch-friends-link" href="http://ioi.im/">ming.z&#39;s blog</a>
+			        
+			        </div>
+				</section>
+				
+
+				
+				
+				<section class="switch-part switch-part4">
+				
+					<div id="js-aboutme">If you want to go fast, go alone. If you want to go far, go with others.</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">XcodeYang</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="https://avatars3.githubusercontent.com/u/9360037" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">XcodeYang</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">我喜欢swift😍，有个Taylor前缀更好</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/zhipingyang" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/p/1006062608078012/home" title="weibo">weibo</a>
+			        
+						<a class="mail" target="_blank" href="/xcodeyang@gmail.com" title="mail">mail</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-2015-09-11" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/14/2015-09-11/" class="article-date">
+  	<time datetime="2015-09-14T12:00:00.000Z" itemprop="datePublished">2015-09-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      浅拷贝与深拷贝
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="浅拷贝与深拷贝"><a href="#浅拷贝与深拷贝" class="headerlink" title="浅拷贝与深拷贝"></a>浅拷贝与深拷贝</h2><blockquote>
+<p> 程序中经常会遇到集合类的传值 <br><br> <strong> 坑：</strong> 数组操作时对于数组中的对象拷贝</p>
+</blockquote>
+<p>###目的：<br>观察array1、mArrayCopy、mArrayCopy2 三者区别</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">NSArray *array1 = [NSArray arrayWithObjects:[NSMutableString stringWithString:@&quot;a&quot;],@&quot;b&quot;,@&quot;c&quot;,nil];</div><div class="line">NSArray *mArrayCopy = [[NSArray alloc] initWithArray:array1 copyItems:YES];</div><div class="line">NSArray* mArrayCopy2 = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject: array1]];</div></pre></td></tr></table></figure>
+<h3 id="首先了解copy与retain的区别"><a href="#首先了解copy与retain的区别" class="headerlink" title="首先了解copy与retain的区别"></a>首先了解copy与retain的区别</h3><p><strong> OC对象引用计数器：屋里开灯规则 </strong></p>
+<blockquote>
+<p>copy是创建一个新对象，retain是创建一个指针，引用对象计数加1。Copy属性表示两个对象内容相同，新的对象retain为1 ，与旧有对象的引用计数无关，旧有对象没有变化。</p>
+<p>retain属性表示两个对象地址相同（建立一个指针，指针拷贝），内容当然相同，这个对象的retain值+1也就是说，retain 是指针拷贝，copy 是内容拷贝。</p>
+</blockquote>
+<h3 id="主角：copy、mutableCopy"><a href="#主角：copy、mutableCopy" class="headerlink" title="主角：copy、mutableCopy"></a>主角：copy、mutableCopy</h3><p><strong><em>注意：可变和不可变对象使用copy、mutableCopy的区别</em></strong></p>
+<blockquote>
+<p>遵守NSCopying 协议的类可以发送copy消息，<br>遵守NSMutableCopying 协议的类才可以发送mutableCopy消息。</p>
+<p>默认的ios类并没有遵守这两个协议<br>自定义copy 必须遵守NSCopying,并且实现 copyWithZone: 方法<br>自定义mutableCopy 那么就必须遵守NSMutableCopying,并且实现 mutableCopyWithZone: 方法</p>
+</blockquote>
+<h3 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h3><h5 id="系统的非容器类对象"><a href="#系统的非容器类对象" class="headerlink" title="系统的非容器类对象"></a>系统的非容器类对象</h5><blockquote>
+<p>这里指的是NSString,NSNumber等等一类的对象。</p>
+</blockquote>
+<p>示例1：<br>不可变string</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">NSString *string = @&quot;origionStr&quot;;</div><div class="line">NSString *string2 = string;</div><div class="line">NSString *stringCopy = [string copy];</div><div class="line">NSMutableString *stringMCopy = [string mutableCopy];</div><div class="line">[stringMCopy appendString:@&quot;!!!!&quot;];</div><div class="line">// log</div><div class="line">NSLog(@&quot;string      = %p %p %@ &quot;,string,&amp;string,string);</div><div class="line">NSLog(@&quot;string2     = %p %p %@ &quot;,string2,&amp;string2,string2);</div><div class="line">NSLog(@&quot;stringCopy  = %p %p %@ &quot;,stringCopy,&amp;stringCopy,stringCopy);</div><div class="line">NSLog(@&quot;stringMCopy = %p %p %@ &quot;,stringMCopy,&amp;stringMCopy,stringMCopy);</div></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">string      = 0x1064e7088		0x7fff597190a0 origionStr </div><div class="line">string2     = 0x1064e7088 		0x7fff59719098 origionStr </div><div class="line">stringCopy  = 0x1064e7088 		0x7fff59719090 origionStr </div><div class="line">stringMCopy = 0x7fafebdbb4b0	0x7fff59719088 origionStr!!!!</div></pre></td></tr></table></figure>
+<p>示例2：<br>可变string</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">NSMutableString *string = [NSMutableString stringWithString: @&quot;origion&quot;];</div><div class="line">NSString *stringCopy = [string copy];</div><div class="line">NSMutableString *mStringCopy = [string copy];</div><div class="line">NSMutableString *stringMCopy = [string mutableCopy];</div><div class="line">[string appendString:@&quot; origion!&quot;];</div><div class="line">[stringMCopy appendString:@&quot;!!&quot;];</div><div class="line">NSLog(@&quot;string      = %p %@&quot;,string,string);</div><div class="line">NSLog(@&quot;stringCopy  = %p %@&quot;,stringCopy,stringCopy);</div><div class="line">NSLog(@&quot;stringMCopy = %p %@&quot;,mStringCopy,mStringCopy);</div><div class="line">NSLog(@&quot;stringMCopy = %p %@&quot;,stringMCopy,stringMCopy);</div></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">string      = 0x7fafebdec820 origion origion!</div><div class="line">stringCopy  = 0x7fafebdcb8c0 origion</div><div class="line">stringMCopy = 0x7fafebda4320 origion</div><div class="line">stringMCopy = 0x7fafebd32890 origion!!</div></pre></td></tr></table></figure>
+<blockquote>
+<p>对于系统的非容器类对象，我们可以认为，如果对一不可变对象复制，copy是指针复制（浅拷贝）和mutableCopy就是对象复制（深拷贝）。如果是对可变对象复制，都是深拷贝，但是copy返回的对象是不可变的。</p>
+</blockquote>
+<h5 id="系统的容器类对象"><a href="#系统的容器类对象" class="headerlink" title="系统的容器类对象"></a>系统的容器类对象</h5><blockquote>
+<p>指NSArray,NSSet,NSDictionary等。对于容器类本身，上面讨论的结论也是适用的，需要探讨的是复制后容器内对象的变化。</p>
+</blockquote>
+<p>示例1：<br>不可变数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">//copy返回不可变对象，mutablecopy返回可变对象</div><div class="line">NSArray *array1 = [NSArray arrayWithObjects:@&quot;a&quot;,@&quot;b&quot;,@&quot;c&quot;,nil];</div><div class="line">NSArray *arrayCopy1 = [array1 copy];</div><div class="line">NSMutableArray *mArrayCopy1 = [array1 mutableCopy];</div><div class="line">[mArrayCopy1 addObject:@&quot;de&quot;];</div><div class="line">[mArrayCopy1 removeObjectAtIndex:0];</div><div class="line">// log</div><div class="line">NSLog(@&quot;array1      = %p %@ %p %@&quot;,array1,array1,array1[1],array1[1]);</div><div class="line">NSLog(@&quot;arrayCopy1  = %p %@ %p %@&quot;,arrayCopy1,arrayCopy1,arrayCopy1[1],arrayCopy1[1]);</div><div class="line">NSLog(@&quot;mArrayCopy1 = %p %@ %p %@&quot;,mArrayCopy1,mArrayCopy1,mArrayCopy1[0],mArrayCopy1[0]);</div></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">array1      = 0x7fafebdeaed0 (a,b,c) 	0x1064e7228 b</div><div class="line">arrayCopy1  = 0x7fafebdeaed0 (a,b,c) 	0x1064e7228 b</div><div class="line">mArrayCopy1 = 0x7fafebdfc010 (b,c,de) 	0x1064e7228 b</div></pre></td></tr></table></figure>
+<p>示例：<br>可变数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">NSArray *array1 = [NSArray arrayWithObjects:@&quot;a&quot;,@&quot;b&quot;,@&quot;c&quot;,nil];</div><div class="line">NSMutableArray *mArrayCopy = [[NSMutableArray alloc] initWithArray:array1 copyItems:YES];</div><div class="line">NSLog(@&quot;array1      = %p %@ %p %@ %p %@&quot;,array1,    array1,     array1[0],      array1[0],      array1[1],      array1[1]);</div><div class="line">NSLog(@&quot;arrayCopy1  = %p %@ %p %@ %p %@&quot;,mArrayCopy,mArrayCopy, mArrayCopy[0],  mArrayCopy[0],  mArrayCopy[1],  mArrayCopy[1]);</div></pre></td></tr></table></figure>
+<p>结果：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">array1      = 0x7fafebcb5ae0 (a,b,c)	 0x10afe1208 a 0x10afe1228 b</div><div class="line">arrayCopy1  = 0x7fafebcb5b10 (a,b,c)	 0x10afe1208 a 0x10afe1228 b</div></pre></td></tr></table></figure>
+<p>示例2：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">NSArray *array1 = [NSArray arrayWithObjects:[NSMutableString stringWithString:@&quot;a&quot;],@&quot;b&quot;,@&quot;c&quot;,nil];</div><div class="line">NSMutableArray *mArrayCopy = [[NSMutableArray alloc] initWithArray:array1 copyItems:YES];</div><div class="line">NSArray* mArrayCopy2 = [NSKeyedUnarchiver unarchiveObjectWithData:[NSKeyedArchiver archivedDataWithRootObject: array1]];</div></pre></td></tr></table></figure>
+<blockquote>
+<p>mArrayCopy2是完全意义上的深拷贝，而mArrayCopy则不是</p>
+<p>对于mArrayCopy内的不可变元素其还是指针复制。或者我们自己实现深拷贝的方法。因为如果容器的某一元素是不可变的，那你复制完后该对象仍旧是不能改变的，因此只需要指针复制即可。除非你对容器内的元素重新赋值，否则指针复制即已足够。</p>
+</blockquote>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/09/25/2015-09-25/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          设计规范交流
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/08/21/2015-08-21/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">那些年我们用过的第三方库</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="2015-09-11" data-title="浅拷贝与深拷贝" data-url="http://yoursite.com/2015/09/14/2015-09-11/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2019 XcodeYang
+    	</div>
+      	<div class="footer-right">
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
